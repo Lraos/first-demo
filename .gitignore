@@ -1,0 +1,2 @@
+# 在上传github时忽视（不提交）的文件，例有一个没用的文件叫.nothing
+.nothing
