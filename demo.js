@@ -36,19 +36,20 @@ window.onload=function(){
         在visual Studio Code（也可以理解为本地git）和github中有三个区：本地区，暂存区，远程仓库区
     3、git commit -m 第一次上传文件 ：
         把暂存区的代码提交到远程仓库中
-    4、git status ：
+    4、和远程仓库建立连接（复制新建仓库的两行代码）
+    5、git status ：
         查看当前项目有哪些改动
         若在本地修改了文件，则会提示那个文件进行了修改，若没有修改文件则提示没有更新
-    5、git log :
+    6、git log :
         显示之前提交的日志
         （会显示提交id，作者和事件）
-    5.1、git log --author="jiangyi"
+    7.1、git log --author="jiangyi"
         只查看jiangyi提交的日志
     二、修改改动后的代码文件并上传到github远程仓库
     1、git status
         显示修改后的文件（文件为红，意为未添加到暂存区）
     2、git add demo.html
-        将修改的文件添加到缓存区（注意add后不是. 是具体的文件名）
+        将修改的文件添加到缓存区（注意add后不是. 是具体的文件名，可用*）
     3、git status
         显示修改后的文件（文件为绿，意为已添加到暂存区）
     4、git commit -m 第一次修改文件
