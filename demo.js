@@ -37,6 +37,8 @@ window.onload=function(){
     3、git commit -m 第一次上传文件 ：
         把暂存区的代码提交到远程仓库中
     4、和远程仓库建立连接（复制新建仓库的两行代码）
+        git remote add origin git@github.com:ga1239/three-demo.git
+        git push -u origin master
     5、git status ：
         查看当前项目有哪些改动
         若在本地修改了文件，则会提示那个文件进行了修改，若没有修改文件则提示没有更新
@@ -54,6 +56,18 @@ window.onload=function(){
         显示修改后的文件（文件为绿，意为已添加到暂存区）
     4、git commit -m 第一次修改文件
     5、git push -u origin master
+    （若出现error: src refspec main does not match any报错，
+    再git remote add origin git@github.com:ga1239/three-demo.git
+        git push -u origin master）
+    三、想要删除不需要的文件时如何操作
+    手动删除：
+    1、在编辑器中将文件删除
+    2、git add .
+    3、git commit -m 删除demo2.html文件
+    4、git push -u origin master
+
+
+
     */
 
 
