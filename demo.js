@@ -53,6 +53,7 @@ window.onload=function(){
     3、git status
         显示修改后的文件（文件为绿，意为已添加到暂存区）
     4、git commit -m 第一次修改文件
+    5、git push -u origin master
     */
 
 
