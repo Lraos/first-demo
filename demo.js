@@ -65,7 +65,11 @@ window.onload=function(){
     2、git add .
     3、git commit -m 删除demo2.html文件
     4、git push -u origin master
-
+    通过命令行方式删除：
+    1、git rm demo copy.html
+    2、git add .
+    3、git commit -m 删除demo2.html文件
+    4、git push -u origin master
 
 
     */
