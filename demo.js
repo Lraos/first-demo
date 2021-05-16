@@ -66,10 +66,15 @@ window.onload=function(){
     3、git commit -m 删除demo2.html文件
     4、git push -u origin master
     通过命令行方式删除：
-    1、git rm demo copy.html
+    1、git rm demo_copy.html
     2、git add .
     3、git commit -m 删除demo2.html文件
     4、git push -u origin master
+    四、rename文件（太简单不写了）
+    命令行：git mv demo2.html demo22.html
+        （将demo2.html改名为demo22.html）
+    五、移动文件位置
+    命令行：git mv demo2.html home
 
 
     */
