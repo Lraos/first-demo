@@ -70,13 +70,26 @@ window.onload=function(){
     2、git add .
     3、git commit -m 删除demo2.html文件
     4、git push -u origin master
+        （自己发现的一点：
+        命令行只能命令的是暂存区，不是本地！！！使用命令行之前先更新暂存区！！）
     四、rename文件（太简单不写了）
-    命令行：git mv demo2.html demo22.html
+        git mv demo2.html demo22.html
         （将demo2.html改名为demo22.html）
     五、移动文件位置
-    命令行：git mv demo2.html home
-
-
+        git mv demo2.html home
+        （将demo2.html移动至home文件夹下）
+    六、移动并修改文件名
+        git mv demo2.html home/home22.html
+        （将demo2.html移动到home文件夹下并改名为home22.html）
+    七、文件有变化时如何查看文件前后变化
+        git log --pretty=oneline home/demo2.html
+        （--pretty=oneline意为日志只显示一行，显示上一个对demo2.html操作的日志）
+        git show 4ca257ebb0206065ff5234afcda7e7cff6103071
+        （查看具体id的改动内容）
+        git log -p home/demo2.html
+        （查看文件具体的改动内容）
+        （注意查看详情时的操作和Linux的vi编辑器操作差不多！！）
+    
     */
 
 
