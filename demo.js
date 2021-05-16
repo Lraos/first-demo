@@ -25,7 +25,7 @@ window.onload=function(){
 
 
     /*
-    如何上传代码至github
+    一、如何上传代码至github
     git需要在终端执行命令，命令如下：
     1、git init ：
         初始化git仓库
@@ -42,6 +42,16 @@ window.onload=function(){
     5、git log :
         显示之前提交的日志
         （会显示提交id，作者和事件）
+    5.1、git log --author="jiangyi"
+        只查看jiangyi提交的日志
+    二、修改改动后的代码文件并上传到github远程仓库
+    1、git status
+        显示修改后的文件（文件为红，意为未添加到暂存区）
+    2、git add demo.html
+        将修改的文件添加到缓存区（注意add后不是. 是具体的文件名）
+    3、git status
+        显示修改后的文件（文件为绿，意为已添加到暂存区）
+    4、git commit -m 第一次修改文件
     */
 
 
