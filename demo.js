@@ -163,7 +163,8 @@ window.onload=function(){
         （以当前分支为主合并代码，注意另一个分支的代码不会被修改成和这个分支一样
             例：合并master和xixi，两个分支都对demo.html做了修改，发生冲突，
             在master分支下使用git merge --abort 命令，即将demo.html改为master下的
-            demo.html，并不用在此提交，直接推送就行。注意：xixi分支下的demo.html不会被修改）
+            demo.html，并不用在此提交，直接推送就行。注意：xixi分支下的demo.html不会被修改
+            但xixi分支下没有冲突的其他文件都会被修改成合并后的样子哈哈）
 
     */
 
