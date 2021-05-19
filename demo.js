@@ -141,7 +141,7 @@ window.onload=function(){
         git branch
         （查看当前项目所有分支，当前所在分支前会有*标识,排序是按首字母排序的）
         git checkout haha
-        （切换到haha分支）
+        （切换到haha分支，若分支存在更改后未提交的代码，则不能切换，必须提交之后才能切换）
         git branch -d xixi
         （删除xixi分支，注意不能删除当前所在的分支）
         git checkout -b xixi
@@ -150,8 +150,10 @@ window.onload=function(){
         （强制删除xixi分支，分支若提交了修改，就不能使用git checkout -b删除）
     十四、合并分支及相关
         （在分支xixi上更改代码并提交之后，切换到主分支master，master的代码还是
-        未更改的，分支也可推送到远程仓库，推送时注意把分支名改为xixi git push -u origin xixi）
-        
+            未更改的，分支也可推送到远程仓库，推送时注意把分支名改为xixi git push -u origin xixi）
+        git merge xixi
+        （合并分支：将xixi和master合并，注意，要在master下才能合并，合并的意思是：若xixi分支中的
+            demo.html发生改动，则将master中的demo.html替换成xixi下的demo.html！）
 
     */
 
