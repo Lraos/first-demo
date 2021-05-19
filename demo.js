@@ -148,6 +148,11 @@ window.onload=function(){
         （创建并切换到xixi分支）
         git checkout -D xixi
         （强制删除xixi分支，分支若提交了修改，就不能使用git checkout -b删除）
+    十四、合并分支及相关
+        （在分支xixi上更改代码并提交之后，切换到主分支master，master的代码还是
+        未更改的，分支也可推送到远程仓库，推送时注意把分支名改为xixi git push -u origin xixi）
+        
+
     */
 
 
