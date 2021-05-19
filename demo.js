@@ -36,9 +36,10 @@ window.onload=function(){
         在visual Studio Code（也可以理解为本地git）和github中有三个区：本地区，暂存区，远程仓库区
     3、git commit -m 第一次上传文件 ：
         把暂存区的代码提交到远程仓库中
-    4、和远程仓库建立连接（复制新建仓库的两行代码）
+    4、和远程仓库建立连接并推送（复制新建仓库的两行代码）
         git remote add origin git@github.com:ga1239/three-demo.git
         git push -u origin master
+        （把代码推送到默认分支master上）
     5、git status ：
         查看当前项目有哪些改动
         若在本地修改了文件，则会提示那个文件进行了修改，若没有修改文件则提示没有更新
@@ -47,6 +48,7 @@ window.onload=function(){
         （会显示提交id，作者和事件）
     7.1、git log --author="jiangyi"
         只查看jiangyi提交的日志
+    总结一下，代码有4个状态：本地，暂存，提交，推送
     二、修改改动后的代码文件并上传到github远程仓库
     1、git status
         显示修改后的文件（文件为红，意为未添加到暂存区）
@@ -58,7 +60,7 @@ window.onload=function(){
     5、git push -u origin master
     （若出现error: src refspec main does not match any报错，
     再git remote add origin git@github.com:ga1239/three-demo.git
-        git push -u origin master）
+        git push -u origin master，可能还会出现连接问题，尝试刷新github页面？？）
     三、想要删除不需要的文件时如何操作
     手动删除：
     1、在编辑器中将文件删除
@@ -89,7 +91,63 @@ window.onload=function(){
         git log -p home/demo2.html
         （查看文件具体的改动内容）
         （注意查看详情时的操作和Linux的vi编辑器操作差不多！！）
-    
+    八、将文件还原至之前状态（将编辑器的代码还原成最近提交给github的代码）
+        git diff
+        （显示现在编辑器的代码和已提交代码不同的文件，并显示哪点代码不同
+            红色表示文件最后一次的操作日志，绿色表示该文件和最后一次上传的代码在哪点不同
+            ！！用于查找改动不多的文件，比较文件并手动修改文件）
+        git checkout -- home/demo2.html
+        （直接将demo2.html文件还原至上回提交的状态，注意没有确认提示）
+    九、不再追踪时如何实现撤销追踪操作
+        （什么是追踪？把某个文件加入到了暂存区中后，git会实现对这个文件的追踪
+            举个例子：实现git checkout -- demo.html还原操作时，只能在未添加至暂存区还原
+            若已添加至暂存区，则不会还原，这就说明暂存区的文件已经被git追踪，导致不会让文件
+            还原至之前的状态）
+        （如果文件已经添加至暂存区，依然像把它还原，则需要撤销该文件的追踪，
+            文件状态改为未添加金暂存区，即可执行还原操作）
+        git reset HEAD home/demo2.html
+        （撤销对以添加至暂存区的demo2.html的追踪操作，再git status发现文件变红色了）
+        （撤销追踪后可以git add 再次将文件添加到暂存区）
+    十、将代码整体回到上一版本或者指定版本
+        git reset --hard HEAD^^^
+        （上传远程仓库一次就相当于增加一次版本，一个^表示向前一个版本，三个就表示
+            向前三个版本）
+        （注意，是编辑器里所有的代码全部回到之前版本，不能指定一个文件，所以要慎用！）
+        （适用与相隔版本不多的版本回退，如果版本太多就不适合）
+        git reset --hard HEAD 4ca257ebb0206065ff5234afcda7e7cff6103071
+        （后面加的是版本号（提交时的id号），可以只取7、8位）
+        （使用git log查看所有提交的id）
+    十一、将单个文件回退到上一版本或指定版本
+        git checkout 4ca257ebb0206065ff5234afcda7e7cff6103071 -- demo2.html
+        （和第八个很像，只不过这个是回到具体id的版本）
+    十二、想要给每个版本创建一个独特标签，做所有标签管理
+        git tag v1.0
+        （默认给最新的版本添加一个v1.0的标签，不用进行其他操作，直接就添加了
+            （相当于已经提交，但没有推送）可以直接git log，可在版本号后查看到tag）
+        git tag
+        （查看所有提交版本的标签，仅显示标签内容）
+        git tag v0.5 4ca257ebb0206065ff5234afcda7e7cff6103071
+        （给指定版本id添加tag，可以是之前版本）
+        git tag -d v0.5
+        （删除指定标签）
+        git push origin v1.0
+        （推送指定标签）
+    十三、想要创建删除分支如何操作
+        （什么是分支？除了一个主线master，还可以创建分支，分支不会影响master和其他分支
+            方便大家协同开发）
+        git branch haha
+        （创建一个名为haha的分支）
+        （创建分支可以理解为将master复制了一遍，所以其他分支也会有master的log信息）
+        git branch
+        （查看当前项目所有分支，当前所在分支前会有*标识,排序是按首字母排序的）
+        git checkout haha
+        （切换到haha分支）
+        git branch -d xixi
+        （删除xixi分支，注意不能删除当前所在的分支）
+        git checkout -b xixi
+        （创建并切换到xixi分支）
+        git checkout -D xixi
+        （强制删除xixi分支，分支若提交了修改，就不能使用git checkout -b删除）
     */
 
 
