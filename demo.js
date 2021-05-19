@@ -182,6 +182,16 @@ window.onload=function(){
         （查看版本线路）
     十七、
         （在github网页也可以创建分支）
+    十八、如何下载远程仓库的代码到本地并获取到远程分支？
+        1、加载一个空文件夹（例：gitOO）
+        2、git init （将此文件设定为git文件，才能使用git指令）
+        3、git clone git@github.com:ga1239/first-demo.git
+        （从github上clone项目到本地，）
+        4、打开first-demo
+        5、git fetch（加载远程分支）
+        6、gitfetch checkout -b xixi origin/xixi
+            （创建一个分支xixi，将远程仓库分支xixi的代码复制进来，
+                并切换到该分支）
 
     */
 
