@@ -153,7 +153,11 @@ window.onload=function(){
             未更改的，分支也可推送到远程仓库，推送时注意把分支名改为xixi git push -u origin xixi）
         git merge xixi
         （合并分支：将xixi和master合并，注意，要在master下才能合并，合并的意思是：若xixi分支中的
-            demo.html发生改动，则将master中的demo.html替换成xixi下的demo.html！）
+            demo.html发生改动，master主分支的demo.html未改动，
+            则将master中的demo.html替换成xixi下的demo.html！
+            合并完成之后，xixi分支依然存在，推送到github，github也依然有xixi分支）
+    十五、当合并分支有冲突时如何正确的合并分支
+        （若主分支master中的demo.html文件和）
 
     */
 
