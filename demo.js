@@ -157,7 +157,13 @@ window.onload=function(){
             则将master中的demo.html替换成xixi下的demo.html！
             合并完成之后，xixi分支依然存在，推送到github，github也依然有xixi分支）
     十五、当合并分支有冲突时如何正确的合并分支
-        （若主分支master中的demo.html文件和）
+        （若主分支master中的demo.html文件和分支xixi中的demo.html同时做了修改，
+            则会在合并时git merge xixi发生冲突报错，此时如何解决？）
+        git merge --abort
+        （以当前分支为主合并代码，注意另一个分支的代码不会被修改成和这个分支一样
+            例：合并master和xixi，两个分支都对demo.html做了修改，发生冲突，
+            在master分支下使用git merge --abort 命令，即将demo.html改为master下的
+            demo.html）
 
     */
 
