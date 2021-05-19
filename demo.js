@@ -165,6 +165,23 @@ window.onload=function(){
             在master分支下使用git merge --abort 命令，即将demo.html改为master下的
             demo.html，并不用在此提交，直接推送就行。注意：xixi分支下的demo.html不会被修改
             但xixi分支下没有冲突的其他文件也不会被修改）
+        （还有一点需要注意：处于xixi分支才能推送xixi分支，处于master分支不能提交xixi分支）
+        （合并分支有冲突时，若使用git merge --abort仅能覆盖，若两个分支都有需要的代码，都想
+        保留一部分删除一部分怎么办？此时需要手动修改，如下）
+        1、git merge xixi （报错）
+        2、删除=，>><<，并修改内容
+        3、git add .
+        4、git commit 
+        5、进入vi编辑器，可修改信息，及提交标题
+        6、推送
+        （在哪使用命令：git commit 不写-m，都会跳到vi编辑器）
+    十六、查看版本路线
+        git log --oneline
+        （查看简化log）
+        git log -- oneline --graph
+        （查看版本线路）
+    十七、
+        （在github网页也可以创建分支）
 
     */
 
